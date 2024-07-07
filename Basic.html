@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API (Application Programming InterFAce)</title>
+        <style>
+
+        </style>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <script>
+            //https://jsonplaceholder.typicode.com/photos
+            //Variable = new XmlHttpRequest(); // let xhttpreq =  XMLHttpRequest();
+             
+            class MyClass{ // Pascal Case
+                //1. Property 2.Constructor 3.Method
+                getName(){
+                    console.log('Hello My Name Is Shubham');
+                }
+            };
+                // Create A New Object From The Class
+                //Syntax
+                    // let objectname = new ClassName();
+                let obj = new MyClass();
+                obj.getName();
+
+        // There Is A Built In Class For Api Calling
+            //XmlHttpRequest Class
+            
+
+        // 1. Function Definaion 
+            function getMyPhotos(url,mycbn){
+                let xhr = new XMLHttpRequest();
+
+                    xhr.open("GET",url);
+                    xhr.send();
+                    xhr.onload = function(){
+                        console.log(typeof xhr.responseText)
+                        mycbn(response);
+                    }
+
+                
+            }
+        // Function Calling
+            getMyPhotos('https://jsonplaceholder.typicode.com/photos',function(response){
+                console.log(response)
+        });
+
+
+        </script>
+    </body>
+</html>
